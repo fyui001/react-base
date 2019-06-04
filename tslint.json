@@ -18,7 +18,9 @@
         "jsx-alignment": false,
         "object-literal-sort-keys": false,
         "quotemark": [true, "single", "jsx-double"],
-        "semicolon": false
+        "semicolon": false,
+        "interface-name": false,
+        "member-ordering": false
     },
     "linterOptions": {
         "exclude": [
