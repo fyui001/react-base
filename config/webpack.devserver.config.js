@@ -1,9 +1,9 @@
 'use strict'
 
 const webpack = require('webpack')
-const baseConfig = require('./webpack.config.prod.js')
+const path = require('path')
 const merge = require('webpack-merge')
-
+const baseConfig = require('./webpack.base.config.js')
 
 const HOST = 'localhost'
 const PORT = 8080
@@ -19,8 +19,11 @@ module.exports = merge(baseConfig, {
         host: HOST,
         port: PORT,
         open: true,
-        historyApiFallback: true
-
+        publicPath: '/',
+        historyApiFallback: true,
+        watchOptions: {
+           poll: true
+       }
     },
 
     module: {
@@ -29,9 +32,17 @@ module.exports = merge(baseConfig, {
                 test: /\.css$/,
                 use: [
                     'style-loader',
-                    'css-loader',
+                    'css-loader'
                 ],
-            },
+            },{
+                test: /\.scss$/,
+                use: [
+                    'style-loader',
+                    'css-loader?modules',
+                    'postcss-loader',
+                    'sass-loader'
+                ]
+            }
         ]
     },
 
