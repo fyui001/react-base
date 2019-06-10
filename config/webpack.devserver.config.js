@@ -2,8 +2,8 @@
 
 const webpack = require('webpack')
 const path = require('path')
-const merge = require('webpack-merge')
 const baseConfig = require('./webpack.base.config.js')
+const merge = require('webpack-merge')
 
 const HOST = 'localhost'
 const PORT = 8080
@@ -15,7 +15,7 @@ module.exports = merge(baseConfig, {
     serve: {
         LogLevel: 'warn',
         hot: true,
-        content: 'dist',
+        contentBase: 'dist',
         host: HOST,
         port: PORT,
         open: true,

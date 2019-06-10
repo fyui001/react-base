@@ -2,14 +2,19 @@
 
 const webpack = require('webpack')
 const path = require('path')
+const rm = require('rimraf')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+
+/* delete files */
+rm.sync(path.join(__dirname, '..', 'prod'))
+rm.sync(path.join(__dirname, '..', 'dist'))
 
 module.exports = {
     entry: {
         app: './src/index.tsx'
     },
     output: {
-        path: path.resolve(__dirname, '..', 'dist')
+        path: path.join(__dirname, '..', 'dist')
     },
 
     resolve: {
