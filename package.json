@@ -33,6 +33,7 @@
     "react-router-dom": "^5.0.0",
     "react-scripts-ts": "3.1.0",
     "redux": "^4.0.1",
+    "rimraf": "^2.6.3",
     "sass": "^1.20.1",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
@@ -43,8 +44,8 @@
     "tslint-react-recommended": "^1.0.15",
     "typescript": "^3.4.5",
     "url-loader": "^1.1.2",
-    "webpack": "^4.31.0",
-    "webpack-cli": "^3.3.2",
+    "webpack": "^4.33.0",
+    "webpack-cli": "^3.3.3",
     "webpack-dev-server": "^3.3.1",
     "webpack-html-plugin": "^0.1.1",
     "webpack-merge": "^4.2.1"
@@ -52,7 +53,7 @@
   "scripts": {
     "dev": "webpack-dev-server --history-api-fallback  --config config/webpack.devserver.config.js",
     "prod": "webpack --progress --config config/webpack.prod.config.js",
-    "builddev": "webpack --progress --config config/webpack.config.dev.js",
+    "builddev": "webpack --progress --config config/webpack.dev.config.js",
     "lint": "tslint --project tsconfig.json",
     "watch": "webpack --watch"
   }
