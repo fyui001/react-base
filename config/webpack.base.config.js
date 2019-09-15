@@ -25,14 +25,33 @@ module.exports = {
         rules: [
             {
                 test: [/\.ts$/, /\.tsx$/],
-                exclude: /node_modules/,
-                loader: 'babel-loader!ts-loader',
-            },{
+                include: path.resolve("src"),
+                use: [
+                    {
+                        loader: 'thread-loader',
+                        options: {
+                            workers: require('os').cpus().length - 1
+                        }
+                    },
+                    {
+                        loader: 'babel-loader'
+                    },
+                    {
+                        loader: 'ts-loader',
+                        options: {
+                            transpileOnly: true,
+                            happyPackMode: true
+                        }
+                    },
+                ]
+            },
+            {
                 test: [/\.js$/, /\.jsx$/],
                 use: {
                     loader: 'babel-loader'
                 }
-            },{
+            },
+            {
                 test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
                 use: {
                     loader: 'url-loader',
