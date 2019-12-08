@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "webpack-dev-server --history-api-fallback  --config config/webpack.devserver.config.js",
-    "prod": "webpack --progress --config config/webpack.prod.config.js",
-    "builddev": "webpack --progress --config config/webpack.dev.config.js",
+    "dev": "webpack-dev-server --history-api-fallback  --config build/webpack.devserver.config.js",
+    "prod": "webpack --progress --config build/webpack.prod.config.js",
+    "builddev": "webpack --progress --config build/webpack.dev.config.js",
     "lint": "tslint --project tsconfig.json",
     "watch": "webpack --watch"
   },
