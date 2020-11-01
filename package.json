@@ -4,10 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "webpack-dev-server --history-api-fallback  --config build/webpack.devserver.config.js",
-    "prod": "webpack --progress --config build/webpack.prod.config.js",
     "builddev": "webpack --progress --config build/webpack.dev.config.js",
-    "lint": "tslint --project tsconfig.json",
-    "watch": "webpack --watch"
+    "prod": "webpack --progress --config build/webpack.prod.config.js",
+    "lint": "eslint --ext .ts,.js,.tsx,.jsx src",
+    "lint:fix": "eslint --ext .ts,.js,.tsx,.jsx src --fix"
   },
   "dependencies": {
     "@babel/core": "^7.12.3",
@@ -43,7 +43,6 @@
     "eslint-plugin-standard": "^4.0.0",
     "html-webpack-plugin": "^4.5.0",
     "jest": "^26.6.0",
-    "jquery": "^3.5.1",
     "postcss-import": "^12.0.1",
     "postcss-loader": "^4.0.4",
     "postcss-url": "^8.0.0",
@@ -54,7 +53,7 @@
     "react-redux": "^7.2.1",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
-    "react-scripts-ts": "3.1.0",
+    "react-scripts-ts": "^3.1.0",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
     "rimraf": "^3.0.2",
