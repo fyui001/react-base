@@ -17,7 +17,6 @@ module.exports = merge(baseConfig, {
     host: HOST,
     port: PORT,
     open: true,
-    publicPath: '/',
     historyApiFallback: true,
     watchOptions: {
       poll: true
@@ -29,8 +28,8 @@ module.exports = merge(baseConfig, {
       {
         test: /\.css$/,
         use: [
-        'style-loader',
-        'css-loader'
+          'style-loader',
+          'css-loader',
         ],
       },
       {

@@ -1,6 +1,5 @@
 'use strict'
 
-const webpack = require('webpack')
 const path = require('path')
 const rm = require('rimraf')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
@@ -11,10 +10,8 @@ rm.sync(path.join(__dirname, '..', 'dist'))
 
 module.exports = {
   output: {
-    path: path.join(__dirname, '..', 'dist')
-  },
-  node: {
-    setImmediate: false,
+    path: path.join(__dirname, '..', 'dist'),
+    publicPath: '/'
   },
   resolve: {
     extensions: ['.js', '.jsx', '.json', '.ts', '.tsx'],
@@ -24,7 +21,7 @@ module.exports = {
     rules: [
       {
         test: [/\.ts$/, /\.tsx$/],
-        include: path.resolve("src"),
+        include: path.resolve('src'),
         use: [
           {
             loader: 'thread-loader',

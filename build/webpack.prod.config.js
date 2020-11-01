@@ -1,6 +1,5 @@
 'use strict'
 
-const webpack = require('webpack')
 const path = require('path')
 const baseConfig = require('./webpack.base.config.js')
 const { merge } = require('webpack-merge')
@@ -16,7 +15,8 @@ module.exports = merge(baseConfig, {
         test: /\.css$/,
         use: [
           'style-loader',
-          'css-loader'
+          'css-loader',
+          'postcss-loader'
         ],
         },
         {
