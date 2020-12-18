@@ -3,7 +3,6 @@ module.exports = {
   root: true,
   parserOptions: {
     parser: [
-      'babel-eslint',
       '@typescript-eslint/parser'
     ],
     ecmaFeatures: {
@@ -21,22 +20,16 @@ module.exports = {
     'plugin:@typescript-eslint/recommended',
     'standard',
     'prettier',
-    'prettier/react'
+    'plugin:prettier/recommended'
   ],
   plugins: [
     '@typescript-eslint',
-    'react',
-    'react-hooks',
-    'prettier'
+    'react-hooks'
   ],
   // add your custom rules here
   rules: {
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-    '@typescript-eslint/explicit-function-return-type': 'off',
-    camelcase: 'off',
-    'prettier/prettier': 'error',
-    '@typescript-eslint/member-delimiter-style': 'off',
+    '@typescript-eslint/explicit-module-boundary-types': 'off',
     'react-hooks/rules-of-hooks': 'error',
-    'react-hooks/exhaustive-deps': 'error'
+    'react-hooks/exhaustive-deps': 'error',
   }
 }
