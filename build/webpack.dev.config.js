@@ -13,27 +13,27 @@ module.exports = merge(baseConfig, {
         use: [
           'style-loader',
           'css-loader',
-          'postcss-loader'
-         ],
-        },
-        {
-          test: /\.styl(us)?$/,
-           use: [
-             'style-loader',
-             'css-loader',
-             'postcss-loader',
-             'stylus-loader'
-           ]
-        },
-        {
-          test: /\.scss$/,
-          use: [
-            'style-loader',
-            'css-loader?modules',
-            'postcss-loader',
-            'sass-loader'
-          ]
-        }
-      ]
-    }
+          'postcss-loader',
+        ],
+      },
+      {
+        test: /\.styl(us)?$/,
+        use: [
+          'style-loader',
+          'css-loader',
+          'postcss-loader',
+          'stylus-loader',
+        ]
+      },
+      {
+        test: /\.scss$/,
+        use: [
+          'style-loader',
+          'css-loader',
+          'postcss-loader',
+          'sass-loader',
+        ]
+      }
+    ]
+  }
 })
