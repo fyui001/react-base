@@ -4,7 +4,7 @@ const baseConfig = require('./webpack.base.config.js')
 const { merge } = require('webpack-merge')
 
 const HOST = 'localhost'
-const PORT = 8080
+const PORT = 8888
 
 module.exports = merge(baseConfig, {
   mode: 'development',
@@ -29,16 +29,17 @@ module.exports = merge(baseConfig, {
         use: [
           'style-loader',
           'css-loader',
+          'postcss-loader',
         ],
       },
       {
         test: /\.styl(us)?$/,
-         use: [
-           'style-loader',
-           'css-loader',
-           'postcss-loader',
-           'stylus-loader'
-         ]
+        use: [
+          'style-loader',
+          'css-loader',
+          'postcss-loader',
+          'stylus-loader',
+        ]
       },
       {
         test: /\.scss$/,
@@ -46,7 +47,7 @@ module.exports = merge(baseConfig, {
           'style-loader',
           'css-loader',
           'postcss-loader',
-          'sass-loader'
+          'sass-loader',
         ]
       }
     ]
