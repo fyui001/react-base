@@ -23,7 +23,7 @@ module.exports = merge(baseConfig, {
           'css-loader',
           'postcss-loader',
           'stylus-loader',
-        ]
+        ],
       },
       {
         test: /\.scss$/,
@@ -31,9 +31,15 @@ module.exports = merge(baseConfig, {
           'style-loader',
           'css-loader',
           'postcss-loader',
-          'sass-loader',
-        ]
-      }
-    ]
+          {
+            loader: "sass-loader",
+            options: {
+              // Prefer `dart-sass`
+              implementation: require("sass"),
+            },
+          },
+        ],
+      },
+    ],
   }
 })
